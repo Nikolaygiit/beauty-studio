@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beauty Studio — онлайн-запись и услуги</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Analytics (замените G-XXXXXXXXXX на ваш ID) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+    <!-- Яндекс.Метрика (замените XXXXXXXX на ваш ID счетчика) -->
+    <!--
+    <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      ym(XXXXXXXX, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+      });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+    -->
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <div class="logo">Beauty<span>Studio</span></div>
+        <nav class="nav">
+          <a href="#services">Услуги</a>
+          <a href="#masters">Мастера</a>
+          <a href="#booking">Онлайн-запись</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#contacts">Контакты</a>
+          <a href="admin.html" target="_blank">Админ-панель</a>
+        </nav>
+        <button class="btn btn--ghost" data-scroll-to="#booking">
+          Записаться
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1>Онлайн-сервис для салонов и студий красоты</h1>
+            <p>
+              Управляйте расписанием, записями клиентов и услугами в одном
+              удобном интерфейсе. Идеально для салонов красоты, барбершопов,
+              мастеров ногтевого сервиса и косметологов.
+            </p>
+            <div class="hero__actions">
+              <button class="btn" data-scroll-to="#booking">
+                Попробовать запись
+              </button>
+              <button class="btn btn--ghost" data-scroll-to="#features">
+                Возможности системы
+              </button>
+            </div>
+            <div class="hero__stats">
+              <div class="hero__stat">
+                <span>+30%</span>
+                <p>Больше онлайн-записей</p>
+              </div>
+              <div class="hero__stat">
+                <span>24/7</span>
+                <p>Клиенты записываются сами</p>
+              </div>
+              <div class="hero__stat">
+                <span>-50%</span>
+                <p>Меньше пропущенных звонков</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero__panel">
+            <h2>Быстрая запись клиента</h2>
+            <form id="quick-booking-form" class="panel-form">
+              <label>
+                Имя клиента
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Например, Анна"
+                  required
+                />
+              </label>
+              <label>
+                Телефон
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="+7 (___) ___-__-__"
+                  required
+                />
+              </label>
+              <label>
+                Услуга
+                <select name="service" required>
+                  <option value="">Выберите услугу</option>
+                  <option value="haircut">Стрижка</option>
+                  <option value="color">Окрашивание</option>
+                  <option value="manicure">Маникюр</option>
+                  <option value="brows">Брови и ресницы</option>
+                  <option value="cosmetology">Косметология</option>
+                </select>
+              </label>
+              <label>
+                Дата и время
+                <input type="datetime-local" id="quick-datetime" name="datetime" required />
+                <div id="quick-calendar" class="calendar-picker"></div>
+              </label>
+              <button type="submit" class="btn btn--full">
+                Создать запись
+              </button>
+              <p class="panel-form__note">
+                Запись создаётся только в демо-режиме и сохраняется в вашем
+                браузере.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="container">
+          <h2 class="section__title">Что даёт система</h2>
+          <p class="section__subtitle">
+            Мини-CRM для индустрии красоты, которая помогает навести порядок в
+            расписании и повысить загрузку мастеров.
+          </p>
+          <div class="grid grid--3">
+            <article class="card">
+              <h3>Онлайн-запись 24/7</h3>
+              <p>
+                Клиенты видят свободные окна и выбирают удобное время без звонка
+                администратору.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Управление расписанием</h3>
+              <p>
+                Гибкое управление сменами мастеров, быстрый перенос и
+                отмена записи в пару кликов.
+              </p>
+            </article>
+            <article class="card">
+              <h3>База клиентов</h3>
+              <p>
+                Храните контакты клиентов и историю посещений, чтобы строить
+                персональные предложения.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section section--alt">
+        <div class="container">
+          <div class="section__header">
+            <div>
+              <h2 class="section__title">Услуги салона</h2>
+              <p class="section__subtitle">
+                Пример структуры услуг: вы можете адаптировать её под свой
+                салон, студию или частную практику.
+              </p>
+            </div>
+            <div class="chips" id="service-filters">
+              <button class="chip chip--active" data-filter="all">
+                Все
+              </button>
+              <button class="chip" data-filter="hair">
+                Волосы
+              </button>
+              <button class="chip" data-filter="nails">
+                Ногти
+              </button>
+              <button class="chip" data-filter="face">
+                Лицо
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid--3" id="service-list">
+            <article class="card service-card" data-category="hair">
+              <h3>Женская стрижка</h3>
+              <p>Подбор формы, мытьё, уход и укладка.</p>
+              <div class="service-card__meta">
+                <span>от 2 000 ₽</span>
+                <span>60 мин</span>
+              </div>
+              <button class="btn btn--ghost btn--small" data-scroll-to="#booking">
+                Записаться
+              </button>
+            </article>
+            <article class="card service-card" data-category="hair">
+              <h3>Окрашивание</h3>
+              <p>Современные техники окрашивания и уход за волосами.</p>
+              <div class="service-card__meta">
+                <span>от 4 500 ₽</span>
+                <span>120 мин</span>
+              </div>
+              <button class="btn btn--ghost btn--small" data-scroll-to="#booking">
+                Записаться
+              </button>
+            </article>
+            <article class="card service-card" data-category="nails">
+              <h3>Маникюр с покрытием</h3>
+              <p>Комбинированный маникюр, выравнивание и цветное покрытие.</p>
+              <div class="service-card__meta">
+                <span>от 1 800 ₽</span>
+                <span>90 мин</span>
+              </div>
+              <button class="btn btn--ghost btn--small" data-scroll-to="#booking">
+                Записаться
+              </button>
+            </article>
+            <article class="card service-card" data-category="nails">
+              <h3>Педикюр</h3>
+              <p>Уход за ступнями и ногтями с использованием проф. косметики.</p>
+              <div class="service-card__meta">
+                <span>от 2 200 ₽</span>
+                <span>90 мин</span>
+              </div>
+              <button class="btn btn--ghost btn--small" data-scroll-to="#booking">
+                Записаться
+              </button>
+            </article>
+            <article class="card service-card" data-category="face">
+              <h3>Уходовая процедура для лица</h3>
+              <p>Подбор ухода по типу кожи, легкий массаж и маска.</p>
+              <div class="service-card__meta">
+                <span>от 3 000 ₽</span>
+                <span>75 мин</span>
+              </div>
+              <button class="btn btn--ghost btn--small" data-scroll-to="#booking">
+                Записаться
+              </button>
+            </article>
+            <article class="card service-card" data-category="face">
+              <h3>Оформление бровей</h3>
+              <p>Коррекция формы, окрашивание и укладка.</p>
+              <div class="service-card__meta">
+                <span>от 1 300 ₽</span>
+                <span>45 мин</span>
+              </div>
+              <button class="btn btn--ghost btn--small" data-scroll-to="#booking">
+                Записаться
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="masters" class="section">
+        <div class="container">
+          <h2 class="section__title">Команда мастеров</h2>
+          <p class="section__subtitle">
+            Пример карточек мастеров с их специализацией и загрузкой.
+          </p>
+          <div class="grid grid--3">
+            <article class="card master-card">
+              <div class="master-card__avatar master-card__avatar--1"></div>
+              <h3>Анна</h3>
+              <p class="master-card__role">Стилист по волосам</p>
+              <p class="master-card__exp">Опыт: 6 лет</p>
+              <p class="master-card__tags">Стрижки, окрашивание, уход</p>
+            </article>
+            <article class="card master-card">
+              <div class="master-card__avatar master-card__avatar--2"></div>
+              <h3>Мария</h3>
+              <p class="master-card__role">Мастер маникюра</p>
+              <p class="master-card__exp">Опыт: 4 года</p>
+              <p class="master-card__tags">Комби-маникюр, педикюр, дизайн</p>
+            </article>
+            <article class="card master-card">
+              <div class="master-card__avatar master-card__avatar--3"></div>
+              <h3>Екатерина</h3>
+              <p class="master-card__role">Косметолог</p>
+              <p class="master-card__exp">Опыт: 8 лет</p>
+              <p class="master-card__tags">Уход за кожей, пилинги, массаж</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="booking" class="section section--alt">
+        <div class="container booking">
+          <div class="booking__info">
+            <h2 class="section__title">Онлайн-запись клиентов</h2>
+            <p class="section__subtitle">
+              Ниже — упрощённый пример модуля записи: вы можете использовать его
+              как основу для своей CRM или сайта салона.
+            </p>
+            <ul class="list">
+              <li>
+                <span>1.</span> Выберите услугу и мастера.
+              </li>
+              <li>
+                <span>2.</span> Укажите удобное время.
+              </li>
+              <li>
+                <span>3.</span> Система сохранит запись в браузере.
+              </li>
+            </ul>
+          </div>
+          <div class="booking__form-wrapper">
+            <form id="booking-form" class="panel-form panel-form--bordered">
+              <div class="panel-form__row">
+                <label>
+                  Имя клиента
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Например, Ольга"
+                    required
+                  />
+                </label>
+                <label>
+                  Телефон
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="+7 (___) ___-__-__"
+                    required
+                  />
+                </label>
+              </div>
+              <div class="panel-form__row">
+                <label>
+                  Услуга
+                  <select name="service" required>
+                    <option value="">Выберите услугу</option>
+                    <option value="Женская стрижка">Женская стрижка</option>
+                    <option value="Окрашивание">Окрашивание</option>
+                    <option value="Маникюр с покрытием">
+                      Маникюр с покрытием
+                    </option>
+                    <option value="Педикюр">Педикюр</option>
+                    <option value="Уходовая процедура для лица">
+                      Уходовая процедура для лица
+                    </option>
+                    <option value="Оформление бровей">
+                      Оформление бровей
+                    </option>
+                  </select>
+                </label>
+                <label>
+                  Мастер
+                  <select name="master" required>
+                    <option value="">Выберите мастера</option>
+                    <option value="Анна">Анна (волосы)</option>
+                    <option value="Мария">Мария (ногти)</option>
+                    <option value="Екатерина">Екатерина (лицо)</option>
+                  </select>
+                </label>
+              </div>
+              <div class="panel-form__row">
+                <label>
+                  Дата и время
+                  <input type="datetime-local" id="booking-datetime" name="datetime" required />
+                  <div id="booking-calendar" class="calendar-picker"></div>
+                </label>
+                <label>
+                  Комментарий
+                  <input
+                    type="text"
+                    name="comment"
+                    placeholder="Пожелания клиента (необязательно)"
+                  />
+                </label>
+              </div>
+              <button type="submit" class="btn btn--full">
+                Сохранить запись
+              </button>
+              <p class="panel-form__note">
+                Демо-версия: данные не уходят на сервер и сохраняются только в
+                вашем браузере.
+              </p>
+            </form>
+
+            <div class="booking__list">
+              <div class="booking__list-header">
+                <h3>Ближайшие записи</h3>
+                <button
+                  id="clear-bookings"
+                  class="btn btn--ghost btn--small"
+                  type="button"
+                >
+                  Очистить список
+                </button>
+              </div>
+              <ul id="booking-list" class="booking-list">
+                <!-- Записи будут появляться здесь -->
+              </ul>
+              <p class="booking__empty" id="booking-empty">
+                Пока нет записей. Создайте первую через форму выше.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" class="section">
+        <div class="container">
+          <h2 class="section__title">Отзывы клиентов</h2>
+          <p class="section__subtitle">
+            Блок отзывов помогает повысить доверие и конверсию в запись.
+          </p>
+          <div class="grid grid--3">
+            <article class="card review-card">
+              <p class="review-card__text">
+                «Очень удобно, что можно записаться онлайн и сразу видеть
+                свободное время. Больше не нужно дозваниваться в салон.»
+              </p>
+              <p class="review-card__author">— Ольга</p>
+            </article>
+            <article class="card review-card">
+              <p class="review-card__text">
+                «Как владелец студии, я вижу записи всех мастеров в одном
+                календаре и могу быстро реагировать на изменения.»
+              </p>
+              <p class="review-card__author">— Ирина, владелец салона</p>
+            </article>
+            <article class="card review-card">
+              <p class="review-card__text">
+                «Система помогла упорядочить записи и уменьшить количество
+                клиентов, которые забывали про визит.»
+              </p>
+              <p class="review-card__author">— Алексей, барбер</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts" class="section section--alt">
+        <div class="container contacts">
+          <div>
+            <h2 class="section__title">Контакты салона</h2>
+            <p class="section__subtitle">
+              Замените данные ниже на контакты вашего салона, студии или личного
+              кабинета мастера.
+            </p>
+            <ul class="contacts__list">
+              <li>
+                <span>Адрес:</span> г. Москва, ул. Примерная, д. 10
+              </li>
+              <li>
+                <span>Телефон:</span> +7 (900) 000-00-00
+              </li>
+              <li>
+                <span>Instagram / VK:</span> @beauty.studio
+              </li>
+              <li>
+                <span>Режим работы:</span> ежедневно с 10:00 до 21:00
+              </li>
+            </ul>
+          </div>
+          <div class="contacts__map-placeholder">
+            Карта или виджет с геолокацией салона
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© 2026 BeautyStudio. Система онлайн-записи для индустрии красоты.</p>
+        <p class="footer__small">
+          Демо-проект: структуру можно использовать как основу для реального
+          сайта или CRM.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
