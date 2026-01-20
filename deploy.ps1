@@ -60,6 +60,14 @@ if ($currentBranch -ne "main") {
     Write-Host "[OK] Branch renamed to main" -ForegroundColor Green
 }
 
+# Pull latest changes first
+Write-Host ""
+Write-Host "Syncing with remote repository..." -ForegroundColor Yellow
+git pull origin main --rebase --no-edit 2>$null
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "[WARNING] Pull failed or no remote changes. Continuing..." -ForegroundColor Yellow
+}
+
 # Push
 Write-Host ""
 Write-Host "Uploading to GitHub..." -ForegroundColor Yellow
