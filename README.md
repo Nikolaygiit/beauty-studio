@@ -1,257 +1,47 @@
-# Beauty Studio — Полнофункциональный сайт для индустрии красоты
+# Gemini Bot
 
-Профессиональный одностраничный сайт для салона красоты, студии или частного мастера с системой онлайн-записи и аналитикой.
+A fully functional, browser-based AI chat bot powered by Google's Gemini models. This application allows you to chat with Gemini 1.5 Flash or Pro, analyze images, video, and audio files, and generate text and code.
 
-## ✨ Возможности
+## Features
 
-### Основной сайт
-- **Современный дизайн** — тёмная тема с градиентами и плавными анимациями
-- **Адаптивная вёрстка** — отлично работает на всех устройствах
-- **Раздел услуг** — каталог с фильтрацией по категориям (волосы, ногти, лицо)
-- **Команда мастеров** — карточки с информацией о специалистах
-- **Онлайн-запись** — интерактивный календарь с выбором времени
-- **Отзывы клиентов** — блок для повышения доверия
-- **Контакты** — информация о салоне и карта
+*   **Chat Interface:** Clean, modern, dark-themed chat interface.
+*   **Multimodal Support:** Upload and analyze images, videos, and audio files alongside your text prompts.
+*   **Model Selection:** Switch between Gemini 1.5 Flash (faster, lower cost) and Gemini 1.5 Pro (more capable).
+*   **History:** Session-based chat history (cleared on refresh for privacy in this demo version).
+*   **Secure API Key Storage:** Your Google API key is stored locally in your browser's `localStorage` and never sent to a third-party server (only directly to Google's API).
+*   **Markdown Support:** Responses are formatted with Markdown (bold, code blocks, etc.).
+*   **Responsive Design:** Works on desktop and mobile.
 
-### Система записи
-- **Календарь с выбором времени** — визуальный выбор даты и времени
-- **Проверка занятости** — автоматическое отображение занятых слотов
-- **Две формы записи** — быстрая и расширенная
-- **Сохранение в браузере** — все записи хранятся локально (демо-режим)
-- **Уведомления** — красивые всплывающие уведомления о действиях
+## Getting Started
 
-### Аналитика
-- **Готовность к подключению** — Яндекс.Метрика и Google Analytics
-- **Отслеживание событий** — автоматическая отправка событий при создании записей
+### Prerequisites
 
-## 🚀 Быстрый старт
+You need a Google AI Studio API Key.
+1.  Go to [Google AI Studio](https://aistudio.google.com/app/apikey).
+2.  Create an API key.
 
-### Локальный запуск
+### Installation
 
-1. **Скачайте проект** или клонируйте репозиторий
-2. **Откройте `index.html`** в браузере (двойной клик или через меню "Открыть файл")
-3. **Готово!** Сайт полностью функционален
+1.  Clone this repository or download the files.
+2.  Open `index.html` in your web browser.
+3.  Click the "Settings" icon (gear) in the sidebar.
+4.  Enter your API Key and click "Save".
 
-### Структура файлов
+### Usage
 
-```
-Проект 2/
-├── index.html          # Главная страница сайта
-├── style.css           # Все стили и дизайн
-├── script.js           # JavaScript логика
-└── README.md           # Документация
-```
+1.  Type your message in the input box and press Enter or click the send button.
+2.  To upload a file (image, video, audio), click the paperclip icon.
+3.  To start a new chat, click "New Chat" in the sidebar.
+4.  To change the model, go to Settings and select your preferred model.
 
-## 📝 Настройка под свой салон
+## Technologies Used
 
-### 1. Изменение названия и бренда
+*   **HTML5/CSS3:** Core structure and styling.
+*   **JavaScript (ES6+):** Application logic.
+*   **Google Generative AI SDK:** Integration with Gemini API via CDN.
+*   **FontAwesome:** Icons.
 
-В файле `index.html` найдите и замените:
+## Notes
 
-```html
-<!-- Строка 18 -->
-<div class="logo">Beauty<span>Studio</span></div>
-
-<!-- Строка 6 -->
-<title>Beauty Studio — онлайн-запись и услуги</title>
-```
-
-### 2. Обновление услуг
-
-В разделе "Услуги салона" (`index.html`, строки 172-239) замените:
-
-- Названия услуг
-- Описания
-- Цены (в формате "от X XXX ₽")
-- Длительность процедур
-- Категории (`data-category="hair"`, `"nails"`, `"face"`)
-
-### 3. Настройка мастеров
-
-В разделе "Команда мастеров" (`index.html`, строки 243-273) обновите:
-
-- Имена мастеров
-- Специализации
-- Опыт работы
-- Услуги, которые они выполняют
-
-### 4. Контакты
-
-В разделе "Контакты салона" (`index.html`, строки 423-450) укажите:
-
-- Реальный адрес
-- Телефон
-- Социальные сети (Instagram, VK, Telegram)
-- Режим работы
-
-### 5. Цветовая схема
-
-В файле `style.css` (строки 21-32) измените переменные:
-
-```css
-:root {
-  --primary: #ff5b9b;              /* Основной цвет */
-  --primary-soft: rgba(255, 91, 155, 0.12);
-  --primary-gradient: linear-gradient(135deg, #ff5b9b, #ff8a5b);
-  /* ... остальные переменные */
-}
-```
-
-## 🌐 Деплой в интернет
-
-### ⚡ Быстрый деплой на GitHub Pages
-
-**Самый простой способ:**
-
-1. **Откройте файл `DEPLOY.md`** — там подробная пошаговая инструкция
-2. **Или используйте автоматический скрипт:**
-   - Установите Git: https://git-scm.com/download/win
-   - Откройте PowerShell в папке проекта
-   - Запустите: `.\deploy.ps1`
-   - Следуйте инструкциям на экране
-
-**Краткая инструкция:**
-
-1. **Создайте репозиторий** на GitHub (github.com → New repository)
-2. **Загрузите файлы** (через GitHub Desktop или командную строку)
-3. **Включите GitHub Pages**:
-   - Settings → Pages
-   - Source: `main` branch, folder: `/ (root)`
-   - Save
-4. **Сайт будет доступен** через 1-2 минуты по адресу: `https://ваш-username.github.io/репозиторий`
-
-📖 **Подробная инструкция:** см. файл `DEPLOY.md`
-
-### Вариант 2: Netlify (бесплатно)
-
-1. **Зарегистрируйтесь** на [netlify.com](https://netlify.com)
-2. **Перетащите папку** проекта в интерфейс Netlify
-3. **Сайт будет доступен** сразу с автоматическим доменом
-4. **Можно подключить** свой домен в настройках
-
-### Вариант 3: Vercel (бесплатно)
-
-1. **Установите Vercel CLI**: `npm i -g vercel`
-2. **В папке проекта** выполните: `vercel`
-3. **Следуйте инструкциям** в терминале
-4. **Сайт будет задеплоен** автоматически
-
-### Вариант 4: Обычный хостинг
-
-1. **Загрузите файлы** через FTP/SFTP на ваш хостинг
-2. **Поместите файлы** в корневую папку домена или подпапку
-3. **Откройте** `index.html` в браузере
-
-## 📊 Подключение аналитики
-
-### Яндекс.Метрика
-
-1. **Создайте счётчик** на [metrika.yandex.ru](https://metrika.yandex.ru)
-2. **Скопируйте ID** счётчика (например, `12345678`)
-3. **В `index.html`** (строки 14-25) раскомментируйте блок Яндекс.Метрики
-4. **Замените `XXXXXXXX`** на ваш ID счётчика
-5. **Сохраните файл**
-
-### Google Analytics
-
-1. **Создайте счётчик** в [Google Analytics](https://analytics.google.com)
-2. **Скопируйте Measurement ID** (формат: `G-XXXXXXXXXX`)
-3. **В `index.html`** (строки 14-25) раскомментируйте блок Google Analytics
-4. **Замените `G-XXXXXXXXXX`** на ваш Measurement ID
-5. **Сохраните файл**
-
-### События для отслеживания
-
-Система автоматически отправляет события:
-- `booking_created` — при создании новой записи
-- Можно добавить больше событий в `script.js`
-
-## 🔧 Подключение реального бэкенда
-
-Сейчас записи сохраняются в `localStorage` браузера (демо-режим). Для реальной работы:
-
-1. **Создайте API** на вашем сервере (Node.js, PHP, Python и т.д.)
-2. **В `script.js`** замените функции `loadBookings()` и `saveBookings()`:
-
-```javascript
-async function loadBookings() {
-  const response = await fetch('/api/bookings');
-  return await response.json();
-}
-
-async function saveBookings(bookings) {
-  await fetch('/api/bookings', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(bookings)
-  });
-}
-```
-
-3. **Добавьте обработку ошибок** и валидацию на сервере
-
-## 🎨 Кастомизация дизайна
-
-### Изменение шрифтов
-
-В `index.html` (строки 8-13) замените ссылку на Google Fonts:
-
-```html
-<link href="https://fonts.googleapis.com/css2?family=ВАШ_ШРИФТ&display=swap" rel="stylesheet">
-```
-
-В `style.css` (строка 11) измените `font-family`.
-
-### Добавление логотипа
-
-Замените текстовый логотип на изображение:
-
-```html
-<div class="logo">
-  <img src="logo.png" alt="Beauty Studio" style="height: 32px;">
-</div>
-```
-
-### Изменение фоновых изображений
-
-Добавьте фоновые изображения в секции через CSS:
-
-```css
-.hero {
-  background-image: url('hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-}
-```
-
-## 📱 Мобильная версия
-
-Сайт полностью адаптивен и оптимизирован для мобильных устройств:
-- Адаптивное меню
-- Оптимизированные формы
-- Удобный календарь на маленьких экранах
-- Быстрая загрузка
-
-## 🔒 Безопасность
-
-Для продакшена рекомендуется:
-- Валидация данных на сервере
-- Защита от спама (reCAPTCHA)
-- HTTPS для всех соединений
-- Регулярные бэкапы данных
-
-## 📞 Поддержка
-
-Если у вас возникли вопросы:
-1. Проверьте консоль браузера (F12) на наличие ошибок
-2. Убедитесь, что все файлы на месте
-3. Проверьте пути к файлам (CSS, JS)
-
-## 📄 Лицензия
-
-Этот проект можно свободно использовать и модифицировать для вашего бизнеса.
-
----
-
-**Удачи с вашим салоном красоты! 💅✨**
-s
+*   Large video/audio files (> 20MB) are restricted in this client-side demo to prevent browser crashes.
+*   This is a client-side only application. No backend server is required.
