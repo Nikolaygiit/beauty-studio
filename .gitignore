@@ -22,3 +22,7 @@ package-lock.json
 # Бэкапы
 *.bak
 *.backup
+
+# Python artifacts
+__pycache__/
+*.pyc
