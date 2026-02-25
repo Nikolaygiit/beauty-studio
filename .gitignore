@@ -22,3 +22,10 @@ package-lock.json
 # Бэкапы
 *.bak
 *.backup
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
