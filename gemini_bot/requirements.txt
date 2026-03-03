@@ -1,0 +1,5 @@
+streamlit
+google-generativeai
+gradio_client
+Pillow
+requests
