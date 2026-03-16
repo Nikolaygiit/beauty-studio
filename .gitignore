@@ -19,6 +19,10 @@ package-lock.json
 .env
 .env.local
 
+# Python
+__pycache__/
+*.pyc
+
 # Бэкапы
 *.bak
 *.backup
