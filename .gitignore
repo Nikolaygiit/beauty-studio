@@ -22,3 +22,7 @@ package-lock.json
 # Бэкапы
 *.bak
 *.backup
+venv/
+__pycache__/
+*.pyc
+.streamlit/
