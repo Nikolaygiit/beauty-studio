@@ -18,7 +18,13 @@ package-lock.json
 # Локальные настройки
 .env
 .env.local
+.streamlit/
 
 # Бэкапы
 *.bak
 *.backup
+
+# Python
+__pycache__/
+*.pyc
+venv/
