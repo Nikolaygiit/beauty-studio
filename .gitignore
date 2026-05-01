@@ -22,3 +22,9 @@ package-lock.json
 # Бэкапы
 *.bak
 *.backup
+
+# Временные файлы Python
+__pycache__/
+*.pyc
+venv/
+.streamlit/
