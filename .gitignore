@@ -22,3 +22,6 @@ package-lock.json
 # Бэкапы
 *.bak
 *.backup
+*.pyc
+__pycache__/
+.pytest_cache/
