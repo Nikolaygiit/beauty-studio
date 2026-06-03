@@ -22,3 +22,6 @@ package-lock.json
 # Бэкапы
 *.bak
 *.backup
+gemini_bot/**/__pycache__/
+gemini_bot/**/*.pyc
+gemini_bot/.pytest_cache/
