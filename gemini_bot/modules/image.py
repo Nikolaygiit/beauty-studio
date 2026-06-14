@@ -1,0 +1,9 @@
+import urllib.parse
+import random
+
+def generate_image_url(prompt: str) -> str:
+    """Generates a Pollinations.ai image URL for the given prompt with a random seed."""
+    encoded_prompt = urllib.parse.quote(prompt)
+    seed = random.randint(1, 1000000)
+    url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?seed={seed}"
+    return url
