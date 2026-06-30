@@ -1,0 +1,5 @@
+streamlit
+google-genai
+gradio_client
+pytest
+pytest-mock
