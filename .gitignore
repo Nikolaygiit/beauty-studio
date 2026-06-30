@@ -22,3 +22,8 @@ package-lock.json
 # Бэкапы
 *.bak
 *.backup
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.class
